@@ -8,11 +8,11 @@
   <body ng-controller="mainCtrl">
     <div class="main-container">
       <h1> DevMountain Chat Room </h1>
-      <form ng-submit="postMessage(message)">
+      <form ng-submit="postMessages(message)">
         <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
       </form>
-      <div class="messages-container">
-        <p ng-repeat="message in messages ">
+      <div  class="messages-container">
+        <p class = 'message_p' ng-repeat="message in messages | orderBy: '-createdAt'">
           {{message.message}} </p>
       </div>
     </div>
